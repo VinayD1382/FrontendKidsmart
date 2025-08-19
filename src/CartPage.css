@@ -1,0 +1,17 @@
+.cart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexible layout */
+  gap: 20px;
+  justify-items: center;
+}
+
+.cart-card {
+  width: 200px;
+  padding: 10px;
+}
+
+.cart-card img {
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
