@@ -26,7 +26,7 @@ function Header() {
   useEffect(() => {
     const fetchAllProducts = async () => {
       try {
-        const response = await fetch("http://backendkidsmart.onrender.com/api/home");
+        const response = await fetch("https://backendkidsmart.onrender.com/api/home");
         const data = await response.json();
         setAllProducts(data);
       } catch (err) {
