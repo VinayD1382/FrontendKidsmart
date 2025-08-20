@@ -140,7 +140,7 @@ const verifyOtp = async () => {
     const result = await confirmationResult.confirm(otp); 
     const idToken = await result.user.getIdToken();
 
-    const response = await axios.post("http://localhost:5000/admin/verify-otp", { idToken });
+    const response = await axios.post("http://backendkidsmart.onrender.com/admin/verify-otp", { idToken });
 
     if (response.data?.token) {
       localStorage.setItem("adminToken", response.data.token);
