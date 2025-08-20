@@ -10,8 +10,8 @@ export const CartProvider = ({ children }) => {
    
   const userId = "guest"; 
 
-  const CART_API = "http://localhost:5000/api/cart";
-  const WISHLIST_API = "http://localhost:5000/api/wishlist";
+  const CART_API = "http://backendkidsmart.onrender.com/api/cart";
+  const WISHLIST_API = "http://backendkidsmart.onrender.com/api/wishlist";
 
   const fetchCart = async () => {
     try {
