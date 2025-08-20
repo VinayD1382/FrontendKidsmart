@@ -66,7 +66,7 @@ const verifyOtp = async () => {
     try {
       const result = await confirmationResult.confirm(otp);
       const idToken = await result.user.getIdToken();
-      const res = await axios.post("http://localhost:5000/api/admin/phone-login", {
+      const res = await axios.post("http://backendkidsmart.onrender.com/api/admin/phone-login", {
         idToken
       });
       localStorage.setItem("adminToken", res.data.token);
@@ -83,7 +83,7 @@ const verifyOtp = async () => {
     e.preventDefault();
     setError("");
     try {
-      const response = await axios.post("http://localhost:5000/api/admin/login", {
+      const response = await axios.post("http://backendkidsmart.onrender.com/api/admin/login", {
         email,
         password,
       });
@@ -116,7 +116,7 @@ const verifyOtp = async () => {
 
       const idToken = await user.getIdToken();
       const response = await axios.post(
-        "http://localhost:5000/api/admin/google-login",
+        "http://backendkidsmart.onrender.com/api/admin/google-login",
         { idToken }
       );
 
