@@ -6,7 +6,7 @@ function ContactsDetails() {
 
   const fetchContacts = async () => {
     try {
-      const res = await axios.get("http://backendkidsmart.onrender.com/api/contact");
+      const res = await axios.get("https://backendkidsmart.onrender.com/api/contact");
       setContacts(res.data);
     } catch (err) {
       console.error("Failed to fetch contacts:", err);
