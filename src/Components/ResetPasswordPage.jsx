@@ -18,7 +18,7 @@ const ResetPasswordPage = () => {
 
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/admin/reset-password/${adminId}`,
+        `http://backendkidsmart.onrender.com/api/admin/reset-password/${adminId}`,
         { password: newPassword }
       );
       setMessage(res.data.message);
