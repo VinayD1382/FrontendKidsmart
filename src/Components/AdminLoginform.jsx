@@ -66,7 +66,7 @@ const verifyOtp = async () => {
     try {
       const result = await confirmationResult.confirm(otp);
       const idToken = await result.user.getIdToken();
-      const res = await axios.post("http://backendkidsmart.onrender.com/api/admin/phone-login", {
+      const res = await axios.post("https://backendkidsmart.onrender.com/api/admin/phone-login", {
         idToken
       });
       localStorage.setItem("adminToken", res.data.token);
@@ -83,7 +83,7 @@ const verifyOtp = async () => {
     e.preventDefault();
     setError("");
     try {
-      const response = await axios.post("http://backendkidsmart.onrender.com/api/admin/login", {
+      const response = await axios.post("https://backendkidsmart.onrender.com/api/admin/login", {
         email,
         password,
       });
@@ -116,7 +116,7 @@ const verifyOtp = async () => {
 
       const idToken = await user.getIdToken();
       const response = await axios.post(
-        "http://backendkidsmart.onrender.com/api/admin/google-login",
+        "https://backendkidsmart.onrender.com/api/admin/google-login",
         { idToken }
       );
 
@@ -140,7 +140,7 @@ const verifyOtp = async () => {
     const result = await confirmationResult.confirm(otp); 
     const idToken = await result.user.getIdToken();
 
-    const response = await axios.post("http://backendkidsmart.onrender.com/admin/verify-otp", { idToken });
+    const response = await axios.post("https://backendkidsmart.onrender.com/admin/verify-otp", { idToken });
 
     if (response.data?.token) {
       localStorage.setItem("adminToken", response.data.token);
