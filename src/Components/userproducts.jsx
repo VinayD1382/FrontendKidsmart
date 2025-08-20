@@ -150,7 +150,7 @@ const AdminOrdersPage = () => {
                       <strong>Payment Proof:</strong>
                       <br />
                       <img
-                        src={`http://backendkidsmart.onrender.com${order.paymentProof}`}
+                        src={`https://backendkidsmart.onrender.com${order.paymentProof}`}
                         alt="Payment Proof"
                         style={{
                           width: "500px",
