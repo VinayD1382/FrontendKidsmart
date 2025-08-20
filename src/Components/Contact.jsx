@@ -17,7 +17,7 @@ function Contact() {
   const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    await axios.post("http://backendkidsmart.onrender.com/api/contact", formData);
+    await axios.post("https://backendkidsmart.onrender.com/api/contact", formData);
 
     setSubmitted(true);
     setFormData({ name: "", email: "", message: "" }); // Reset form
