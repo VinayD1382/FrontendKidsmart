@@ -6,7 +6,7 @@ function ProductList() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/home")
+    axios.get("http://backendkidsmart.onrender.com/api/home")
       .then(res => setProducts(res.data))
       .catch(err => console.error(err));
   }, []);
