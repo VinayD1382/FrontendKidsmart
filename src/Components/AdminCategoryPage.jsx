@@ -25,7 +25,7 @@ const [formData, setFormData] = useState({ name: "", price: "", description: "" 
   const fetchProducts = async () => {
     try {
       const endpoint = getEndpoint(category);
-      const res = await axios.get(`http://localhost:5000/api/${endpoint}`);
+      const res = await axios.get(`http://backendkidsmart.onrender.com/api/${endpoint}`);
       setProducts(res.data);
     } catch (err) {
       console.error(err);
@@ -35,7 +35,7 @@ const [formData, setFormData] = useState({ name: "", price: "", description: "" 
   const handleDelete = async (id) => {
     try {
       const endpoint = getEndpoint(category); 
-      await axios.delete(`http://localhost:5000/api/${endpoint}/${id}`);
+      await axios.delete(`http://backendkidsmart.onrender.com/api/${endpoint}/${id}`);
       alert(`${category} product deleted successfully!`);
       fetchProducts();
     } catch (err) {
@@ -46,7 +46,7 @@ const [formData, setFormData] = useState({ name: "", price: "", description: "" 
 const handleUpdate = async (id) => {
   try {
     const endpoint = getEndpoint(category);
-    await axios.put(`http://localhost:5000/api/${endpoint}/${id}`, formData);
+    await axios.put(`http://backendkidsmart.onrender.com/api/${endpoint}/${id}`, formData);
     alert("Product updated successfully!");
     setEditingProduct(null);
     fetchProducts();
