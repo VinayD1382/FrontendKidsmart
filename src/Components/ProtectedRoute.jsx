@@ -24,7 +24,7 @@ function ProtectedRoute({ children }) {
       }
 
       try {
-        const res = await axios.get("http://backendkidsmart.onrender.com/api/admin/verify", {
+        const res = await axios.get("https://backendkidsmart.onrender.com/api/admin/verify", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
