@@ -6,7 +6,7 @@ const AdminOrdersPage = () => {
 
   const fetchOrders = async () => {
     try {
-      const response = await axios.get("http://backendkidsmart.onrender.com/api/checkout");
+      const response = await axios.get("https://backendkidsmart.onrender.com/api/checkout");
       setOrders(response.data);
     } catch (error) {
       console.error("Failed to fetch orders:", error);
@@ -15,7 +15,7 @@ const AdminOrdersPage = () => {
 
   const verifyPayment = async (orderId) => {
     try {
-      await axios.patch(`http://backendkidsmart.onrender.com/api/checkout/${orderId}/verify`);
+      await axios.patch(`https://backendkidsmart.onrender.com/api/checkout/${orderId}/verify`);
       alert("Payment verified successfully!");
       fetchOrders();
     } catch (error) {
@@ -27,7 +27,7 @@ const AdminOrdersPage = () => {
   // Reject payment
   const rejectPayment = async (orderId) => {
     try {
-      await axios.patch(`http://backendkidsmart.onrender.com/api/checkout/${orderId}/reject`);
+      await axios.patch(`https://backendkidsmart.onrender.com/api/checkout/${orderId}/reject`);
       alert("Payment rejected successfully!");
       fetchOrders();
     } catch (error) {
