@@ -44,25 +44,25 @@ function App() {
   const wishlistCount = (wishlist || []).length;
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/home")
+    axios.get("http://backendkidsmart.onrender.com/api/home")
       .then(res => setProducts(res.data))
       .catch(err => console.error(err));
   }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/kids") 
+    axios.get("http://backendkidsmart.onrender.com/api/kids") 
       .then(res => kidssetProducts(res.data))
       .catch(err => console.error(err));
   }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/stationary")  
+    axios.get("http://backendkidsmart.onrender.com/api/stationary")  
       .then(res => StationsetProducts(res.data))
       .catch(err => console.error(err));
   }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/toys")  
+    axios.get("http://backendkidsmart.onrender.com/api/toys")  
       .then(res => ToysetProducts(res.data))
       .catch(err => console.error(err));
   }, []);
