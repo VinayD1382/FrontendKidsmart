@@ -23,7 +23,7 @@ function UserLogin({ cart }) {
     return;
   }
   try {
-    await axios.post("http://localhost:5000/api/users/register", {
+    await axios.post("http://backendkidsmart.onrender.com/api/users/register", {
       email: email.toLowerCase(),
       password,
     });
@@ -42,7 +42,7 @@ const handleLogin = async (e) => {
     return;
   }
   try {
-    const res = await axios.post("http://localhost:5000/api/users/login", {
+    const res = await axios.post("http://backendkidsmart.onrender.com/api/users/login", {
       email: email.toLowerCase(),
       password,
     });
