@@ -50,7 +50,7 @@ function BuyPage() {
         payload.append("paymentProof", paymentProof);
       }
 
-      await axios.post("http://backendkidsmart.onrender.com/api/checkout", payload, {
+      await axios.post("https://backendkidsmart.onrender.com/api/checkout", payload, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
