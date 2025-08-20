@@ -33,10 +33,10 @@ function AdminPage() {
     }
 
     const endpoints = {
-      home: "http://backendkidsmart.onrender.com/api/home",
-      kids: "http://backendkidsmart.onrender.com/api/kids",
-      toys: "http://backendkidsmart.onrender.com/api/toys",
-      stationary: "http://backendkidsmart.onrender.com/api/stationary",
+      home: "https://backendkidsmart.onrender.com/api/home",
+      kids: "https://backendkidsmart.onrender.com/api/kids",
+      toys: "https://backendkidsmart.onrender.com/api/toys",
+      stationary: "https://backendkidsmart.onrender.com/api/stationary",
     };
 
     try {
