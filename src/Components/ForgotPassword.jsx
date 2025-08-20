@@ -14,7 +14,7 @@ const navigate = useNavigate();
     setError("");
 
     try {
-      const res = await axios.post("http://backendkidsmart.onrender.com/api/admin/forgot-password", { email });
+      const res = await axios.post("https://backendkidsmart.onrender.com/api/admin/forgot-password", { email });
       setMessage(res.data.message);
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong");
