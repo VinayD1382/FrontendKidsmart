@@ -201,7 +201,7 @@ const AdminOrdersPage = () => {
                       </button>
                     </>
                   )}
-
+                {/*
                 {order.paymentStatus === "Verified" && (
                   <p style={{ marginTop: "10px", color: "lightgreen" }}>
                     ✅ Payment Verified
@@ -211,7 +211,7 @@ const AdminOrdersPage = () => {
                   <p style={{ marginTop: "10px", color: "red" }}>
                     ❌ Payment Rejected
                   </p>
-                )}
+                )}*/}
               </div>
             );
           })
