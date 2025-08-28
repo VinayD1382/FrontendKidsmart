@@ -30,6 +30,66 @@ function BuyPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // 💳 Razorpay NetBanking payment
+    if (formData.paymentMethod === "NetBanking") {
+      try {
+        const { data: order } = await axios.post(
+          "https://backendkidsmart.onrender.com/api/create-order",
+          { amount: totalPrice }
+        );
+
+        const options = {
+          key: "rzp_test_RAduDXwwdhSAGm", // Replace with your Razorpay key
+          amount: order.amount,
+          currency: order.currency,
+          name: "KidsMart",
+          description: "Order Payment",
+          order_id: order.id,
+          handler: function (response) {
+            alert(
+              "Payment successful! Payment ID: " +
+                response.razorpay_payment_id
+            );
+
+            // After success → call checkout API
+            axios.post("https://backendkidsmart.onrender.com/api/checkout", {
+              email: formData.email,
+              cart,
+              address: {
+                name: formData.name,
+                street: formData.street,
+                area: formData.area,
+                door: formData.door,
+                state: formData.state,
+                phone: formData.phone,
+              },
+              paymentMethod: "NetBanking",
+              paymentId: response.razorpay_payment_id,
+            });
+
+            clearCart();
+            navigate("/");
+          },
+          prefill: {
+            name: formData.name,
+            email: formData.email,
+            contact: formData.phone,
+          },
+          theme: {
+            color: "#3399cc",
+          },
+        };
+
+        const rzp = new window.Razorpay(options);
+        rzp.open();
+      } catch (error) {
+        console.error("Razorpay error:", error);
+        alert("Payment failed, please try again.");
+      }
+      return;
+    }
+
+    // 🛒 COD or QR Payment
     try {
       const payload = new FormData();
       payload.append("email", formData.email);
@@ -175,10 +235,11 @@ function BuyPage() {
             onChange={handleChange}
           >
             <option>Cash On Delivery</option>
-            <option>Online Payment</option>
+            <option>QR & UPLOAD</option>
+            <option>NetBanking</option>
           </select>
         </div>
-        {formData.paymentMethod === "Online Payment" && (
+        {formData.paymentMethod === "QR & UPLOAD" && (
           <div className="mb-3 text-center">
             <h5>Scan & Pay</h5>
             <p className="mt-2" style={{fontSize:"25px"}}>Pay ₹{totalPrice}  {}</p>
