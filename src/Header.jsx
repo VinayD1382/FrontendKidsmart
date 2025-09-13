@@ -178,7 +178,6 @@ function Header() {
                 padding: "5px 10px",
               }}
             >
-              LOGIN
             </button>
           </Link>
           <Link to={isAdminLoggedIn ? "/admin" : "/admin/login"}>
