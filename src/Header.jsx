@@ -169,16 +169,7 @@ function Header() {
             </button>
           </Link>
 
-          <Link to={"/ulogin"}>
-            <button
-              style={{
-                background: "navy",
-                color: "white",
-                borderRadius: "8px",
-                padding: "5px 10px",
-              }}
-            >
-            </button>
+         
           </Link>
           <Link to={isAdminLoggedIn ? "/admin" : "/admin/login"}>
             <button
