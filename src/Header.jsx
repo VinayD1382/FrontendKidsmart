@@ -168,9 +168,6 @@ function Header() {
               ♥ {wishlistCount || 0}
             </button>
           </Link>
-
-         
-          </Link>
           <Link to={isAdminLoggedIn ? "/admin" : "/admin/login"}>
             <button
               style={{
